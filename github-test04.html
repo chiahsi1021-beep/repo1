@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- CSS 函式 -->
+  <label for="f01" style="color: aqua;">Downloading progress:</label>
+  <progress id="f01" value="80" max="100"></progress>
+
+  <script>
+    const progress = document.getElementById("f01");
+    const timer = setInterval(() => {
+      if (progress.value < progress.max) {
+        progress.value += 1; // 每秒增加 1%
+      } else {
+        clearInterval(timer); // 停止計時器,避免超過最大值
+      }
+    }, 1000); // 每1000毫秒 (1秒) 執行一次
+  </script>
+</body>
+</html>
